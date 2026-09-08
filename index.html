@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ELITE CLUB - Elite Block Party</title>
+<style>
+  *{margin:0;padding:0;box-sizing:border-box;font-family: 'Helvetica Neue', Arial, sans-serif;}
+  body{background:#000;color:#fff;}
+  .container{max-width:1200px;margin:0 auto;padding:20px;}
+  
+  /* HEADER */
+  header{display:flex;justify-content:space-between;align-items:center;padding:20px;}
+  header h1{font-size:20px;letter-spacing:2px;}
+  .menu{border:1px solid #444;padding:8px;cursor:pointer;}
+  
+  /* HERO */
+  .hero{background:linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1549924231-16cld8d5f7d1?q=80&w=2070') center/cover; padding:100px 20px;text-align:left;}
+  .hero p{font-size:12px;letter-spacing:1px;margin-bottom:10px;}
+  .hero h2{font-size:32px;font-weight:800;line-height:1.2;margin-bottom:20px;}
+  .hero h2 span{color:#D4AF37;}
+  .btn{background:#D4AF37;color:#000;padding:12px 24px;border:none;font-weight:bold;cursor:pointer;margin-right:10px;}
+  .btn-outline{background:transparent;color:#fff;border:1px solid #fff;padding:12px 24px;cursor:pointer;}
+  .price{font-size:12px;margin-top:15px;opacity:0.7;}
+  
+  /* SECTIONS */
+  section{padding:60px 20px;border-top:1px solid #111;}
+  .date{font-size:48px;font-weight:800;margin:10px 0;}
+  .tag{font-size:10px;letter-spacing:2px;opacity:0.6;margin:20px 0;}
+  .big-text{font-size:36px;font-weight:800;line-height:1.2;margin:20px 0;}
+  .big-text span{color:#D4AF37;}
+  .grid{display:grid;grid-template-columns:1fr;gap:20px;margin-top:30px;}
+  .card{border:1px solid #222;padding:20px;}
+  .card h3{color:#D4AF37;margin-bottom:10px;}
+  
+  /* TICKETS */
+  .ticket{border:1px solid #333;padding:15px;display:flex;justify-content:space-between;align-items:center;margin:10px 0;}
+  .ticket-price{color:#D4AF37;font-weight:bold;}
+  
+  /* FOOTER */
+  footer{padding:40px 20px;text-align:center;border-top:1px solid #111;}
+  input, select, textarea{width:100%;padding:12px;background:#111;border:1px solid #333;color:#fff;margin:10px 0;}
+  
+  @media(min-width:768px){
+    .hero h2{font-size:56px;}
+    .grid{grid-template-columns:repeat(3,1fr);}
+    .big-text{font-size:48px;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>ELITE CLUB</h1>
+  <div class="menu">☰</div>
+</header>
+
+<section class="hero">
+  <p>LAGOS · NIGERIA / EST. 2023</p>
+  <p>ELITE BLOCK PARTY</p>
+  <h2>WHERE <br> AUTOMOTIVE <br> <span>CULTURE MEETS</span> <br> ENTERTAINMENT.</h2>
+  <button class="btn">BUY TICKETS →</button>
+  <button class="btn-outline">READ OUR STORY ↓</button>
+  <p class="price">TICKETS FROM ₦12,000 | REGULAR · VIP · VVIP · TABLE FOR 4</p>
+</section>
+
+<section>
+  <p>NEXT TRANSMISSION</p>
+  <div class="date">NOVEMBER 14</div>
+  <p>Victoria Island, Lagos · 2PM – late</p>
+  <p class="tag">THE SIGNAL IS LIVE · CARS · SOUND · CULTURE · LAGOS</p>
+</section>
+
+<section>
+  <p>01 / THE STORY</p>
+  <h2 class="big-text">NOT JUST A CAR <br> SHOW. <br> <span>A POINT OF VIEW.</span></h2>
+  <p>ELITE is a Nigerian cultural platform for people who move differently. We bring automotive obsession, music, nightlife, and Lagos' restless creative energy into one unforgettable orbit.</p>
+  <div class="grid">
+    <div class="card"><h3>01 RARE MACHINES</h3><p>Cars that turn traffic and start conversations.</p></div>
+    <div class="card"><h3>02 LIVE FREQUENCY</h3><p>Sound, art, and nightlife with no background mode.</p></div>
+    <div class="card"><h3>03 OUR PEOPLE</h3><p>A community built on taste, ambition, and motion.</p></div>
+  </div>
+</section>
+
+<section>
+  <p>02 / THE FESTIVAL</p>
+  <h2 class="big-text">ELITE BLOCK <br> <span>PARTY.</span></h2>
+  <p>One day. One coastline. The most considered gathering of automotive culture and entertainment in Lagos.</p>
+  <p>📅 Saturday, November 14 | 📍 Victoria Island | 🎵 Live sets + DJs</p>
+</section>
+
+<section>
+  <p>03 / LINE-UP</p>
+  <h2 class="big-text"><span>SOUND</span> IN MOTION.</h2>
+  <div class="card"><h3>LIVE ARTISTS</h3><p>A live performance programme built for the main stage. Artist announcements coming soon.</p></div>
+  <div class="card"><h3>SURPRISE SETS</h3><p>Unannounced moments, special guests, and collaborations that only happen at ELITE.</p></div>
+  <div class="card"><h3>DJS & SELECTORS</h3><p>The sound of Lagos after dark, from first arrival to the final transmission.</p></div>
+</section>
+
+<section>
+  <p>04 / WHAT TO EXPECT</p>
+  <h2 class="big-text">THE FULL <br> <span>FREQUENCY.</span></h2>
+  <div class="card"><h3>01 CARS</h3><p>Curated display of performance, classics, and custom builds from Nigeria and beyond.</p></div>
+  <div class="card"><h3>02 DJS</h3><p>Soundtrack the night with the city's most considered selectors.</p></div>
+  <div class="card"><h3>03 ENTERTAINMENT</h3><p>A full programme of artists, performers, and cultural moments.</p></div>
+  <div class="card"><h3>04 VIP / VVIP</h3><p>Priority access, elevated viewing, and hospitality built around your night.</p></div>
+  <div class="card"><h3>05 FIREWORKS</h3><p>A night-sky finale built for the memory bank.</p></div>
+  <div class="card"><h3>06 VENDORS</h3><p>Discover the brands, makers, and tastemakers shaping the scene.</p></div>
+  <div class="card"><h3>07 LIFESTYLE</h3><p>A curated intersection of rare machines, live sound, and culture.</p></div>
+</section>
+
+<section>
+  <p>05 / ACCESS</p>
+  <h2 class="big-text">CHOOSE <br> <span>YOUR LANE.</span></h2>
+  <p>LIMITED CAPACITY - LAGOS</p>
+  <div class="ticket"><div><h3>REGULAR</h3><p>Online ₦12,000 · At venue ₦15,000</p></div><div class="ticket-price">₦12,000</div></div>
+  <div class="ticket"><div><h3>VIP</h3><p>Online ₦25,000 · At venue ₦30,000</p></div><div class="ticket-price">₦25,000</div></div>
+  <div class="ticket"><div><h3>VVIP</h3><p>Online ₦45,000 · At venue ₦50,000</p></div><div class="ticket-price">₦45,000</div></div>
+  <div class="ticket"><div><h3>TABLE FOR 4</h3><p>Exclusive table for four people</p></div><div class="ticket-price">₦250,000</div></div>
+  <button class="btn">BUY TICKETS →</button>
+</section>
+
+<section>
+  <p>06 / MAKE YOUR MARK</p>
+  <h2 class="big-text">PUT YOUR <br> <span>NAME IN MOTION.</span></h2>
+  <div class="card"><h3>Gold Sponsor</h3><p>₦2,000,000</p></div>
+  <div class="card"><h3>Silver Sponsor</h3><p>₦1,500,000</p></div>
+  <div class="card"><h3>Bronze Sponsor</h3><p>₦1,000,000</p></div>
+  <div class="card"><h3>Supporting Sponsor</h3><p>₦500,000</p></div>
+</section>
+
+<section>
+  <p>07 / START A CONVERSATION</p>
+  <h2 class="big-text">MAKE AN <br> <span>ENTRANCE.</span></h2>
+  <p>📧 elite-tickets@gmail.com | 📸 @eliteculture.ng</p>
+  <form>
+    <input placeholder="YOUR NAME">
+    <input placeholder="EMAIL ADDRESS">
+    <select><option>Tickets</option><option>Vendors</option><option>Partnerships</option></select>
+    <textarea placeholder="Say the thing."></textarea>
+    <button class="btn">SEND ENQUIRY →</button>
+  </form>
+</section>
+
+<footer>
+  <h2>ELITE CLUB</h2>
+  <p>Automotive culture meets entertainment. Lagos, Nigeria. Since 2023.</p>
+  <p>© 2023-2026 ELITE CLUB</p>
+</footer>
+
+</body>
+</html>
