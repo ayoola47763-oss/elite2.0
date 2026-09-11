@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BUY TICKETS - ELITE CLUB</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { background: #000; color: white; font-family: 'Helvetica Neue', Arial, sans-serif; }
+    
+    /* NAVBAR */
+.nav { display: flex; justify-content: space-between; align-items: center; padding: 35px 70px; border-bottom: 1px solid #111; }
+.nav-left { font-size: 12px; letter-spacing: 3px; font-weight: 500; color: #ccc; text-transform: uppercase; }
+.nav-left.gold { color: gold; font-weight: 700; border-bottom: 1px solid gold; padding-bottom: 4px; }
+.nav-right a { color: gold; text-decoration: none; font-weight: 700; letter-spacing: 2px; }
+.nav-right a:hover { color: white; }
+
+    /* TICKETS SECTION */
+.container { padding: 80px 70px; max-width: 1200px; margin: 0 auto; }
+.header.small { color: gold; font-size: 12px; letter-spacing: 3px; margin-bottom: 15px; font-weight: 700; }
+.header h1 { font-size: 60px; font-weight: 900; margin-bottom: 10px; }
+.header p { color: #888; margin-bottom: 60px; }
+.ticket-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
+.ticket-card { border: 1px solid #222; padding: 40px 30px; background: #0a0a0a; transition: 0.3s; position: relative; }
+.ticket-card:hover { border-color: gold; transform: translateY(-5px); }
+.ticket-card.popular { border: 2px solid gold; }
+.ticket-card.badge { position: absolute; top: -15px; right: 20px; background: gold; color: black; padding: 5px 15px; font-size: 11px; font-weight: 900; letter-spacing: 1px; }
+.ticket-card h3 { font-size: 24px; margin-bottom: 10px; }
+.ticket-card.price { font-size: 36px; color: gold; font-weight: 900; margin: 20px 0; }
+.ticket-card.price.small { font-size: 14px; color: #888; }
+.ticket-card.features { list-style: none; margin: 30px 0; }
+.ticket-card.features li { color: #bbb; margin-bottom: 12px; font-size: 14px; }
+.ticket-card.features li:before { content: "✓ "; color: gold; font-weight: bold; margin-right: 8px; }
+.btn-buy { width: 100%; background: gold; color: black; padding: 16px; text-align: center; text-decoration: none; font-weight: 900; letter-spacing: 1.5px; display: block; border: none; cursor: pointer; transition: 0.3s; }
+.btn-buy:hover { background: white; }
+
+    @media(max-width: 900px){
+  .nav,.container { padding: 30px; }
+  .ticket-grid { grid-template-columns: 1fr; }
+  .header h1 { font-size: 40px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <div class="nav">
+    <div class="nav-left">
+      <span class="gold">ELITE CLUB</span> / TICKETS
+    </div>
+    <div class="nav-right">
+      <a href="index.html">← BACK HOME</a>
+    </div>
+  </div>
+
+  <!-- TICKETS -->
+  <div class="container">
+    <div class="header">
+      <div class="small">05 / ACCESS</div>
+      <h1>CHOOSE <span style="color: gold;">YOUR LANE.</span></h1>
+      <p>November 14 | Victoria Island, Lagos | 2PM - Late</p>
+    </div>
+
+    <div class="ticket-grid">
+      
+      <!-- REGULAR -->
+      <div class="ticket-card">
+        <h3>REGULAR</h3>
+        <div class="price">₦12,000 <span class="small">/ Online</span></div>
+        <ul class="features">
+          <li>General Event Access</li>
+          <li>Access to Car Displays</li>
+          <li>Food & Drinks Available</li>
+          <li>Elite Club Wristband</li>
+        </ul>
+        <a href="#" class="btn-buy">BUY NOW</a>
+      </div>
+
+      <!-- VIP -->
+      <div class="ticket-card popular">
+        <div class="badge">MOST POPULAR</div>
+        <h3>VIP</h3>
+        <div class="price">₦35,000 <span class="small">/ Online</span></div>
+        <ul class="features">
+          <li>Everything in Regular</li>
+          <li>VIP Lounge Access</li>
+          <li>Complimentary Drinks</li>
+          <li>Priority Entry</li>
+          <li>Meet & Greet Section</li>
+        </ul>
+        <a href="#" class="btn-buy">BUY NOW</a>
+      </div>
+
+      <!-- VVIP TABLE -->
+      <div class="ticket-card">
+        <h3>VVIP TABLE FOR 4</h3>
+        <div class="price">₦200,000 <span class="small">/ Table</span></div>
+        <ul class="features">
+          <li>Everything in VIP</li>
+          <li>Reserved Table for 4</li>
+          <li>Premium Bottle Service</li>
+          <li>Personal Host</li>
+          <li>Parking Access</li>
+        </ul>
+        <a href="#" class="btn-buy">RESERVE TABLE</a>
+      </div>
+
+    </div>
+  </div>
+
+</body>
+</html>

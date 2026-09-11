@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PAST EVENTS - ELITE CLUB</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Inter:wght@400;500;700&display=swap');
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { background: #000; color: white; font-family: 'Inter', sans-serif; }
+    
+    .gold-text { background: linear-gradient(90deg, #FFD700, #FFA500); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+
+    .nav { display: flex; justify-content: space-between; align-items: center; padding: 25px 70px; position: fixed; top:0; width: 100%; z-index: 100; background: rgba(0,0,0,0.85); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(255,215,0,0.1); }
+    .nav-left { font-size: 12px; letter-spacing: 4px; font-weight: 700; color: #ccc; }
+    .nav-left .gold { color: gold; font-weight: 900; }
+    .nav-right a { color: gold; text-decoration: none; font-weight: 900; letter-spacing: 2px; transition: 0.3s; }
+    .nav-right a:hover { text-shadow: 0 0 10px gold; }
+
+    .container { padding: 140px 70px 80px; max-width: 1300px; margin: 0 auto; }
+    .header.small { color: gold; font-size: 12px; letter-spacing: 3px; margin-bottom: 15px; font-weight: 900; }
+    .header h1 { font-family: 'Montserrat', sans-serif; font-size: 60px; font-weight: 900; margin-bottom: 10px; }
+    .header p { color: #888; margin-bottom: 60px; font-size: 18px; }
+
+    .events-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
+    .event-card { border: 1px solid #222; background: #0a0a0a; border-radius: 16px; overflow: hidden; transition: 0.4s; }
+    .event-card:hover { border-color: gold; transform: translateY(-8px); box-shadow: 0 0 40px rgba(255,215,0,0.2); }
+    .event-card img { width: 100%; height: 250px; object-fit: cover; }
+    .event-card .info { padding: 30px; }
+    .event-card .date { color: gold; font-size: 12px; letter-spacing: 2px; margin-bottom: 10px; font-weight: 900; }
+    .event-card h3 { font-family: 'Montserrat', sans-serif; font-size: 22px; margin-bottom: 10px; }
+    .event-card .desc { color: #aaa; font-size: 14px; line-height: 1.7; margin-bottom: 20px; }
+    .event-card .link { color: gold; text-decoration: none; font-weight: 900; font-size: 13px; letter-spacing: 1px; transition: 0.3s; }
+    .event-card .link:hover { text-shadow: 0 0 10px gold; }
+
+    @media(max-width: 900px){
+      .nav,.container { padding: 20px 20px; }
+      .container { padding-top: 120px; }
+      .events-grid { grid-template-columns: 1fr; }
+      .header h1 { font-size: 40px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <div class="nav">
+    <div class="nav-left">
+      <span class="gold">ELITE CLUB</span> / ARCHIVE
+    </div>
+    <div class="nav-right">
+      <a href="index.html">← BACK HOME</a>
+    </div>
+  </div>
+
+  <!-- PAST EVENTS -->
+  <div class="container">
+    <div class="header">
+      <div class="small">ARCHIVE</div>
+      <h1>PAST <span class="gold-text">EVENTS</span></h1>
+      <p>Relive the moments that made ELITE</p>
+    </div>
+
+    <div class="events-grid">
+      
+      <!-- EVENT 1 -->
+      <div class="event-card">
+        <img src="https://images.unsplash.com/photo-1514353975981-1bbf227c8d4a" alt="Elite Car Meet 2025">
+        <div class="info">
+          <div class="date">NOVEMBER 18, 2025</div>
+          <h3>ELITE CAR MEET 1.0 </h3>
+          <div class="desc">Over 200 cars, 5,000+ attendees. The biggest car meet in Lagos.</div>
+          <a href="#" class="link">WATCH VIDEO →</a>
+        </div>
+      </div>
+
+      <!-- EVENT 2 -->
+      <div class="event-card">
+        <img src="https://images.unsplash.com/photo-1614162692292-7ac56d4af0e4" alt="Supercar Sunday">
+        <div class="info">
+          <div class="date">JULY 22, 2025</div>
+          <h3>SUPERCAR SUNDAY</h3>
+          <div class="desc">Lambos, Ferraris, and GTRs took over Victoria Island.</div>
+          <a href="#" class="link">WATCH VIDEO →</a>
+        </div>
+      </div>
+
+      <!-- EVENT 3 -->
+      <div class="event-card">
+        <img src="https://images.unsplash.com/photo-1544829099-b9a0c07fad1a" alt="Night Cruise">
+        <div class="info">
+          <div class="date">MARCH 10, 2025</div>
+          <h3>ELITE NIGHT CRUISE</h3>
+          <div class="desc">Midnight cruise from Lekki to VI with 50+ cars.</div>
+          <a href="#" class="link">WATCH VIDEO →</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</body>
+</html>

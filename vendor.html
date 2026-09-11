@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VENDOR APPLICATION - ELITE CLUB</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Inter:wght@400;500;700&display=swap');
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { background: #000; color: white; font-family: 'Inter', sans-serif; padding-top: 120px; }
+    
+    .gold-text { background: linear-gradient(90deg, #FFD700, #FFA500, #FFD700); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+
+    .nav { display: flex; justify-content: space-between; align-items: center; padding: 25px 70px; position: fixed; top:0; width: 100%; z-index: 100; background: rgba(0,0,0,0.85); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(255,215,0,0.1); }
+    .nav-left { font-size: 12px; letter-spacing: 4px; font-weight: 700; color: #ccc; }
+    .nav-left a { color: gold; text-decoration: none; font-weight: 900; transition: 0.3s; }
+    .nav-left a:hover { text-shadow: 0 0 10px gold; }
+
+    .container { max-width: 700px; margin: 0 auto; padding: 40px 20px; }
+    .section-title { font-family: 'Montserrat', sans-serif; text-align: center; font-size: 40px; font-weight: 900; margin-bottom: 20px; }
+    .subtitle { text-align: center; color: #aaa; margin-bottom: 50px; }
+
+    .form-group { margin-bottom: 25px; }
+    .form-group label { display: block; color: gold; font-weight: 900; font-size: 12px; letter-spacing: 2px; margin-bottom: 10px; text-transform: uppercase; }
+    
+    .form-group input, .form-group textarea {
+      width: 100%;
+      padding: 18px 20px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,215,0,0.2);
+      border-radius: 12px;
+      color: white;
+      font-size: 16px;
+      font-family: 'Inter', sans-serif;
+      transition: 0.3s;
+    }
+
+    /* FIXED SELECT STYLING */
+    .form-group select { 
+      width: 100%; 
+      padding: 18px 20px; 
+      background: rgba(255,255,255,0.05); 
+      border: 1px solid rgba(255,215,0,0.2); 
+      border-radius: 12px; 
+      color: white; 
+      font-size: 16px; 
+      font-family: 'Inter', sans-serif; 
+      transition: 0.3s;
+      appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='gold' viewBox='0 0 16 16'%3E%3Cpath d='M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: calc(100% - 20px) center;
+      padding-right: 50px;
+    }
+
+    /* THIS MAKES THE OPTIONS VISIBLE */
+    .form-group select option {
+      background: #111; /* dark background for dropdown */
+      color: white; /* white text so you can see it */
+      padding: 12px;
+    }
+    .form-group select option:hover,
+    .form-group select option:checked {
+      background: gold;
+      color: black;
+    }
+
+    .form-group input:focus, .form-group textarea:focus, .form-group select:focus {
+      outline: none;
+      border-color: gold;
+      box-shadow: 0 0 20px rgba(255,215,0,0.2);
+    }
+
+    .btn-gold { 
+      background: linear-gradient(90deg, #FFD700, #FFA500); 
+      color: black; padding: 18px 40px; 
+      border: none; 
+      font-weight: 900; 
+      letter-spacing: 2px; 
+      border-radius: 50px; 
+      box-shadow: 0 0 30px rgba(255,215,0,0.4); 
+      transition: 0.3s; 
+      display: block; 
+      width: 100%;
+      font-family: 'Montserrat', sans-serif; 
+      font-size: 16px;
+      cursor: pointer;
+    }
+    .btn-gold:hover { transform: scale(1.02); box-shadow: 0 0 50px rgba(255,215,0,0.7); }
+
+    /* POPUP */
+    #thankYouPopup { display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.9); z-index:999; justify-content:center; align-items:center; backdrop-filter:blur(10px); animation: fadeIn 0.3s; }
+    @keyframes fadeIn { from {opacity:0;} to {opacity:1;} }
+    .popup-box { background:#111; border:2px solid gold; border-radius:24px; padding:60px 40px; text-align:center; max-width:500px; margin:20px; box-shadow:0 0 50px rgba(255,215,0,0.3); }
+
+    @media(max-width: 900px){
+      .nav { padding: 20px 20px; }
+      .section-title { font-size: 30px; }
+      .popup-box { padding: 40px 25px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <div class="nav">
+    <div class="nav-left">
+      <a href="index.html">← BACK TO ELITE</a>
+    </div>
+  </div>
+
+  <!-- FORM -->
+  <div class="container">
+    <h1 class="section-title gold-text">BECOME A VENDOR</h1>
+    <p class="subtitle">Apply to showcase your brand at the next ELITE event</p>
+
+    <form id="vendorForm">
+      <div class="form-group">
+        <label>Full Name / Business Name</label>
+        <input type="text" id="name" required>
+      </div>
+
+      <div class="form-group">
+        <label>Phone Number</label>
+        <input type="tel" id="phone" required>
+      </div>
+
+      <div class="form-group">
+        <label>Email Address</label>
+        <input type="email" id="email" required>
+      </div>
+
+      <div class="form-group">
+        <label>Business Type</label>
+        <select id="type" required>
+          <option value="" disabled selected>Select</option>
+          <option value="Food & Drinks">Food & Drinks</option>
+          <option value="Fashion & Merch">Fashion & Merch</option>
+          <option value="Art & Lifestyle">Art & Lifestyle</option>
+          <option value="Automotive Products">Automotive Products</option>
+          <option value="Other">Other</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label>What Will You Be Selling/Exhibiting?</label>
+        <textarea id="products" rows="4" required></textarea>
+      </div>
+
+      <div class="form-group">
+        <label>Social Handles</label>
+        <input type="text" id="ig" placeholder="@yourbrand">
+      </div>
+
+      <button type="submit" class="btn-gold">SUBMIT APPLICATION →</button>
+    </form>
+  </div>
+
+  <!-- THANK YOU POPUP -->
+  <div id="thankYouPopup">
+    <div class="popup-box">
+      <div style="font-size:60px; margin-bottom:20px;">✅</div>
+      <h2 class="gold-text" style="font-family:'Montserrat',sans-serif; font-size:32px; margin-bottom:15px;">APPLICATION SENT!</h2>
+      <p style="color:#ccc; font-size:16px; line-height:1.8; margin-bottom:30px;">
+        WhatsApp is opening now.<br>
+        Our team will reach out to you within 24 hours.
+      </p>
+      <button onclick="closePopup()" class="btn-gold" style="width:auto; padding:15px 35px;">
+        CLOSE
+      </button>
+    </div>
+  </div>
+
+  <script>
+    function closePopup() {
+      document.getElementById('thankYouPopup').style.display = 'none';
+    }
+
+    document.getElementById('vendorForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      const name = document.getElementById('name').value;
+      const phone = document.getElementById('phone').value;
+      const email = document.getElementById('email').value;
+      const type = document.getElementById('type').value;
+      const products = document.getElementById('products').value;
+      const ig = document.getElementById('ig').value;
+
+      const message = `Hello ELITE CLUB%0A%0AI want to be a VENDOR at the event.%0A%0A*Name:* ${name}%0A*Phone:* ${phone}%0A*Email:* ${email}%0A*Business Type:* ${type}%0A*Products:* ${products}%0A*IG:* ${ig}`;
+
+      const whatsappNumber = "2348032933407";
+      const whatsappURL = `https://wa.me/${whatsappNumber}?text=${message}`;
+
+      document.getElementById('thankYouPopup').style.display = 'flex';
+      setTimeout(() => { window.open(whatsappURL, '_blank'); }, 1000);
+
+    });
+  </script>
+
+</body>
+</html>

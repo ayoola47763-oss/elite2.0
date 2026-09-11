@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Elite Club - Login</title>
+  <title>Elite Club - Sign Up</title>
   <style>
     body { font-family: Arial; background: #0a0a0a; color: white; display: flex; justify-content: center; align-items: center; height: 100vh; }
     .box { background: #1a1a1a; padding: 30px; border-radius: 10px; width: 300px; }
@@ -11,16 +11,17 @@
 </head>
 <body>
   <div class="box">
-    <h2>Login</h2>
+    <h2>Sign Up</h2>
     <input type="email" id="email" placeholder="Email">
     <input type="password" id="password" placeholder="Password">
-    <button onclick="login()">Login</button>
-    <p>No account? <a href="signup.html" style="color: gold;">Sign Up</a></p>
+    <input type="text" id="name" placeholder="Your Name">
+    <button onclick="signup()">Create Account</button>
+    <p>Already have account? <a href="login.html" style="color: gold;">Login</a></p>
   </div>
 
   <script type="module">
     import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
-    import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+    import { getAuth, createUserWithEmailAndPassword, updateProfile } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
 
     // YOUR FIREBASE CONFIG
     const firebaseConfig = {
@@ -36,13 +37,18 @@
     const app = initializeApp(firebaseConfig);
     const auth = getAuth(app);
 
-    window.login = () => {
+    window.signup = () => {
       const email = document.getElementById('email').value;
       const password = document.getElementById('password').value;
+      const name = document.getElementById('name').value;
       
-      signInWithEmailAndPassword(auth, email, password)
+      createUserWithEmailAndPassword(auth, email, password)
+        .then((userCredential) => {
+          return updateProfile(userCredential.user, { displayName: name });
+        })
         .then(() => {
-          window.location.href = 'index.html';
+          alert('Account created!');
+          window.location.href = 'login.html';
         })
         .catch((error) => alert(error.message));
     }
