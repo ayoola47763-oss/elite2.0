@@ -10,86 +10,112 @@
     html { scroll-behavior: smooth; }
     body { background: #000; color: white; font-family: 'Inter', sans-serif; overflow-x: hidden; }
 
-  .gold-text {
-      background: linear-gradient(90deg, #FFD700, #FFA500, #FFD700);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
+.gold-text { background: linear-gradient(90deg, #FFD700, #FFA500, #FFD700); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+.fade-in { opacity: 0; transform: translateY(30px); transition: opacity 0.8s ease, transform 0.8s ease; }
+.fade-in.show { opacity: 1; transform: translateY(0); }
 
-    /* FADE IN ANIMATION */
-  .fade-in { opacity: 0; transform: translateY(30px); transition: opacity 0.8s ease, transform 0.8s ease; }
-  .fade-in.show { opacity: 1; transform: translateY(0); }
+.nav { display: flex; justify-content: space-between; align-items: center; padding: 25px 70px; position: fixed; width: 100%; z-index: 100; background: rgba(0,0,0,0.85); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(255,215,0,0.1); }
+.nav-left { font-size: 12px; letter-spacing: 4px; font-weight: 700; color: #ccc; }
+.nav-right { display: flex; gap: 20px; }
+.nav-right a { color: gold; text-decoration: none; font-weight: 900; letter-spacing: 2px; font-size: 14px; transition: 0.3s; }
+.nav-right a:hover { text-shadow: 0 0 10px gold; }
 
-  .nav { display: flex; justify-content: space-between; align-items: center; padding: 25px 70px; position: fixed; width: 100%; z-index: 100; background: rgba(0,0,0,0.85); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(255,215,0,0.1); }
-  .nav-left { font-size: 12px; letter-spacing: 4px; font-weight: 700; color: #ccc; }
-  .nav-right { display: flex; gap: 20px; }
-  .nav-right a { color: gold; text-decoration: none; font-weight: 900; letter-spacing: 2px; font-size: 14px; transition: 0.3s; }
-  .nav-right a:hover { text-shadow: 0 0 10px gold; }
+.hero { height: 100vh; background: radial-gradient(circle at 50% 50%, rgba(255,215,0,0.1) 0%, transparent 70%), url('https://images.unsplash.com/photo-1544829099-b9a0c07fad1a') center/cover no-repeat; display: flex; align-items: center; padding: 0 70px; }
+.hero-content h1 { font-family: 'Montserrat', sans-serif; font-size: 80px; line-height: 1; font-weight: 900; letter-spacing: -3px; text-shadow: 0 0 40px rgba(255,215,0,0.3); }
+.btn-gold { background: linear-gradient(90deg, #FFD700, #FFA500); color: black; padding: 18px 40px; text-decoration: none; font-weight: 900; letter-spacing: 2px; border-radius: 50px; box-shadow: 0 0 30px rgba(255,215,0.4); transition: 0.3s; display: inline-block; font-family: 'Montserrat', sans-serif; }
+.btn-gold:hover { transform: scale(1.05); box-shadow: 0 0 50px rgba(255,215,0,0.7); }
 
-  .hero { height: 100vh; background: radial-gradient(circle at 50% 50%, rgba(255,215,0,0.1) 0%, transparent 70%), url('https://images.unsplash.com/photo-1544829099-b9a0c07fad1a') center/cover no-repeat; display: flex; align-items: center; padding: 0 70px; }
-  .hero-content h1 { font-family: 'Montserrat', sans-serif; font-size: 80px; line-height: 1; font-weight: 900; letter-spacing: -3px; text-shadow: 0 0 40px rgba(255,215,0,0.3); }
-  .btn-gold { background: linear-gradient(90deg, #FFD700, #FFA500); color: black; padding: 18px 40px; text-decoration: none; font-weight: 900; letter-spacing: 2px; border-radius: 50px; box-shadow: 0 0 30px rgba(255,215,0,0.4); transition: 0.3s; display: inline-block; font-family: 'Montserrat', sans-serif; }
-  .btn-gold:hover { transform: scale(1.05); box-shadow: 0 0 50px rgba(255,215,0,0.7); }
+.section { padding: 120px 70px; }
+.section-label { color: gold; font-size: 12px; letter-spacing: 4px; font-weight: 900; text-align: center; margin-bottom: 15px; text-transform: uppercase; }
+.section-title { font-family: 'Montserrat', sans-serif; text-align: center; font-size: 50px; font-weight: 900; margin-bottom: 70px; }
 
-  .section { padding: 120px 70px; }
-  .section-label { color: gold; font-size: 12px; letter-spacing: 4px; font-weight: 900; text-align: center; margin-bottom: 15px; text-transform: uppercase; }
-  .section-title { font-family: 'Montserrat', sans-serif; text-align: center; font-size: 50px; font-weight: 900; margin-bottom: 70px; }
+.about { background: #000; text-align: center; max-width: 1100px; margin: 0 auto; }
+.about p { color: #ccc; font-size: 17px; line-height: 1.9; margin-bottom: 25px; text-align: left; }
+.about-highlight { border-left: 3px solid gold; padding: 20px 30px; margin: 40px auto; text-align: left; max-width: 900px; background: rgba(255,215,0,0.03); }
+.about-highlight p { font-size: 18px; font-weight: 500; color: white; margin: 0; }
+.about-final { font-size: 28px; font-weight: 900; margin-top: 60px; font-family: 'Montserrat', sans-serif; text-align: center; }
+.about-final span { color: gold; }
 
-  .about { background: #000; text-align: center; max-width: 1100px; margin: 0 auto; }
-  .about p { color: #ccc; font-size: 17px; line-height: 1.9; margin-bottom: 25px; }
-  .about-highlight { border-left: 3px solid gold; padding: 20px 30px; margin: 50px auto; text-align: left; max-width: 900px; }
-  .about-highlight p { font-size: 20px; font-weight: 700; color: white; margin: 0; }
-  .about-final { font-size: 28px; font-weight: 900; margin-top: 60px; font-family: 'Montserrat', sans-serif; }
-  .about-final span { color: gold; }
+.glass-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; max-width: 1300px; margin: 0 auto; }
+.glass-card { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,215,0,0.2); backdrop-filter: blur(20px); border-radius: 24px; padding: 60px 40px; text-decoration: none; color: white; transition: 0.5s; display: block; position: relative; }
+.glass-card:hover { border-color: gold; transform: translateY(-10px); box-shadow: 0 20px 60px rgba(255,215,0,0.3); }
+.glass-card.tag { font-size: 11px; letter-spacing: 3px; color: gold; font-weight: 900; margin-bottom: 15px; text-transform: uppercase; }
+.glass-card h3 { font-family: 'Montserrat', sans-serif; font-size: 32px; font-weight: 900; line-height: 1.1; margin-bottom: 20px; }
+.glass-card p { color: #aaa; font-size: 16px; line-height: 1.8; margin-bottom: 30px; }
+.glass-card.cta { font-weight: 900; font-size: 14px; letter-spacing: 2px; }
 
-    /* 3 COLUMN GRID NOW */
-  .glass-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; max-width: 1300px; margin: 0 auto; }
-  .glass-card {
-      background: rgba(255,255,255,0.03);
-      border: 1px solid rgba(255,215,0,0.2);
-      backdrop-filter: blur(20px);
-      border-radius: 24px;
-      padding: 60px 40px;
+.coming-soon-badge {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: linear-gradient(90deg, #FF6B6B, #FFA500);
+  color: black;
+  padding: 8px 15px;
+  border-radius: 20px;
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: 2px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.story-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; max-width: 1200px; margin: 0 auto; }
+.story-grid img { width: 100%; height: 500px; object-fit: cover; border-radius: 20px; border: 1px solid rgba(255,215,0,0.2); }
+
+    /* FOOTER WITH SOCIALS - WHATSAPP STYLE */
+    footer { text-align: center; padding: 80px 20px 40px; border-top: 1px solid rgba(255,215,0,0.1); background: #000; }
+.social-icons { display: flex; justify-content: center; gap: 25px; margin-bottom: 30px; }
+.social-icon {
+      width: 55px;
+      height: 55px;
+      border: 1.5px solid #FFD700;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: transparent;
+      transition: 0.3s;
       text-decoration: none;
-      color: white;
-      transition: 0.5s;
-      display: block;
     }
-  .glass-card:hover { border-color: gold; transform: translateY(-10px); box-shadow: 0 20px 60px rgba(255,215,0,0.3); }
-  .glass-card.tag { font-size: 11px; letter-spacing: 3px; color: gold; font-weight: 900; margin-bottom: 15px; text-transform: uppercase; }
-  .glass-card h3 { font-family: 'Montserrat', sans-serif; font-size: 32px; font-weight: 900; line-height: 1.1; margin-bottom: 20px; }
-  .glass-card p { color: #aaa; font-size: 16px; line-height: 1.8; margin-bottom: 30px; }
-  .glass-card.cta { font-weight: 900; font-size: 14px; letter-spacing: 2px; }
+.social-icon:hover {
+      background: rgba(255,215,0,0.1);
+      transform: scale(1.1);
+      box-shadow: 0 0 15px rgba(255,215,0,0.3);
+    }
+.social-icon svg { width: 24px; height: 24px; fill: #FFD700; }
 
-  .icon { font-size: 50px; margin-bottom: 25px; filter: drop-shadow(0 0 15px rgba(255,215,0,0.5)); }
+/* WHATSAPP SPECIFIC HOVER */
+.social-icon.whatsapp:hover {
+  background: rgba(37, 211, 102, 0.15);
+  border-color: #25D366;
+  box-shadow: 0 0 20px rgba(37, 211, 102, 0.4);
+}
+.social-icon.whatsapp svg { fill: #25D366; }
 
-  .story-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; max-width: 1200px; margin: 0 auto; }
-  .story-grid img { width: 100%; height: 500px; object-fit: cover; border-radius: 20px; border: 1px solid rgba(255,215,0,0.2); }
+    footer p { color: #888; font-size: 14px; letter-spacing: 1px; }
 
-    footer { text-align: center; padding: 80px 20px; border-top: 1px solid rgba(255,215,0,0.1); }
-
-    /* MOBILE */
     @media(max-width: 900px){
-  .nav { padding: 20px 20px; flex-direction: column; gap: 15px; }
-  .nav-left { letter-spacing: 2px; font-size: 10px; }
-  .nav-right { gap: 15px; flex-wrap: wrap; justify-content: center; }
-  .nav-right a { font-size: 12px; }
-  .section { padding: 80px 20px; }
-  .glass-grid,.story-grid { grid-template-columns: 1fr; gap: 25px; }
-  .glass-card { padding: 40px 25px; }
-  .section-title { font-size: 35px; margin-bottom: 50px; }
-  .hero { padding: 0 20px; }
-  .hero-content h1 { font-size: 45px; }
-  .btn-gold { padding: 16px 32px; font-size: 14px; }
-  .story-grid img { height: 300px; }
-  .about-highlight { padding: 15px 20px; }
+.nav { padding: 20px 20px; flex-direction: column; gap: 15px; }
+.nav-left { letter-spacing: 2px; font-size: 10px; }
+.nav-right { gap: 15px; flex-wrap: wrap; justify-content: center; }
+.nav-right a { font-size: 12px; }
+.section { padding: 80px 20px; }
+.glass-grid,.story-grid { grid-template-columns: 1fr; gap: 25px; }
+.glass-card { padding: 40px 25px; }
+.section-title { font-size: 35px; margin-bottom: 50px; }
+.hero { padding: 0 20px; }
+.hero-content h1 { font-size: 45px; }
+.btn-gold { padding: 16px 32px; font-size: 14px; }
+.story-grid img { height: 300px; }
+.about p { text-align: center; }
+.about-highlight { padding: 15px 20px; }
+.social-icon { width: 50px; height: 50px; }
+.social-icon svg { width: 22px; height: 22px; }
     }
   </style>
 </head>
 <body>
 
-  <!-- NAVBAR WITH ABOUT LINK -->
+  <!-- NAVBAR -->
   <div class="nav">
     <div class="nav-left">
       <span class="gold-text">LAGOS - NIGERIA</span> / EST. 2025
@@ -137,35 +163,23 @@
     </div>
   </div>
 
-  <!-- EVENTS SECTION WITH 3 CARDS -->
+  <!-- EVENTS SECTION -->
   <div class="section fade-in" id="events" style="background: #050505;">
     <h2 class="section-title gold-text">WHAT'S HAPPENING</h2>
     <div class="glass-grid">
-
-      <!-- CARD 1: PAST EVENTS -->
-      <a href="past-events.html" class="glass-card">
-        <div class="tag">LIVE / PAST EVENTS</div>
-        <h3><span class="gold-text">ELITE BLOCK PARTY</span><br>GALLERY</h3>
-        <p>Check out highlights from previous events. Over 200 cars, 5,000+ attendees.</p>
-        <div class="cta">VIEW PAST EVENTS <span>→</span></div>
-      </a>
-
-      <!-- CARD 2: UPCOMING EVENT -->
       <a href="tickets.html" class="glass-card">
         <div class="tag">UPCOMING EVENT</div>
         <h3><span class="gold-text">NOVEMBER 20</span><br>2026</h3>
         <p>Victoria Island, Lagos · 2PM – late. The biggest car meet of the year.</p>
         <div class="cta" style="color: #C084FC;">GET TICKETS <span>→</span></div>
       </a>
-
-      <!-- CARD 3: NEW ONE -->
-      <a href="merch.html" class="glass-card">
-        <div class="tag">UPC</div>
+      <div class="glass-card" style="opacity: 0.6; cursor: not-allowed;">
+        <div class="coming-soon-badge">COMING SOON</div>
+        <div class="tag">MERCH</div>
         <h3><span class="gold-text">ELITE</span><br>MERCH DROP</h3>
         <p>Limited edition tees, hoodies, caps + car accessories. Rep the movement everywhere.</p>
-        <div class="cta" style="color: #FF6B6B;">SHOP NOW <span>→</span></div>
-      </a>
-
+        <div class="cta" style="color: #888;">LAUNCHING SOON <span>→</span></div>
+      </div>
     </div>
   </div>
 
@@ -173,8 +187,8 @@
   <div class="section fade-in" id="story">
     <h2 class="section-title">OUR <span class="gold-text">JOURNEY</span></h2>
     <div class="story-grid">
-      <img src="https://images.unsplash.com/photo-1614162692292-7ac56d4af0e4" alt="">
-      <img src="wa_image_713240620579526342" alt="">
+      <img src="car1.jpe" alt="Elite2.0">
+      <img src="car2.jpe" alt="Elite2.0">
     </div>
   </div>
 
@@ -183,44 +197,59 @@
     <div class="section-label">ABOUT US</div>
     <h2 class="section-title">MORE THAN <span class="gold-text">A CAR CLUB</span></h2>
 
-    <p>ELITE CLUB is a dynamic automotive and lifestyle community created in 2025 with a vision to bring together car enthusiasts, automobile lovers, creatives, entrepreneurs, and young people who share a passion for cars, entertainment, and unforgettable experiences.</p>
+    <p>ELITE CLUB is a dynamic automotive and lifestyle community created in <span class="gold-text">2025</span> with a vision to bring together car enthusiasts, automobile lovers, creatives, entrepreneurs, and young people who share a passion for cars, entertainment, and unforgettable experiences. What started as a community built around a genuine love for automobiles has grown into a platform dedicated to creating exciting experiences and building a strong culture around the automotive lifestyle.</p>
 
-    <p>Since our creation, ELITE CLUB has continued to grow by connecting people who appreciate exceptional cars, unique builds, automotive creativity, and the lifestyle that comes with being part of a passionate community.</p>
+    <p>Since our creation, ELITE CLUB has continued to grow by connecting people who appreciate exceptional cars, unique builds, automotive creativity, and the lifestyle that comes with being part of a passionate community. We believe that cars are more than just machines — they represent creativity, personality, ambition, hard work, and a way for people from different backgrounds to connect. Our goal is to create an environment where everyone can come together, share their passion, showcase their vehicles, meet like-minded people, and create memories that last.</p>
 
     <div class="about-highlight">
-      <p>Our goal is to create an environment where everyone can come together, share their passion, showcase their vehicles, meet like-minded people, and create memories that last.</p>
+      <p>Our activities include car shows, car meets, automotive showcases, lifestyle events, entertainment experiences, and community gatherings designed to bring the automotive scene to life. From carefully selected vehicles and modified builds to exotic and luxury cars, ELITE CLUB provides a platform where automobile owners can proudly display their machines while enthusiasts get the opportunity to experience some of the most exciting cars in the community.</p>
     </div>
 
-    <p>Our activities include car shows, car meets, automotive showcases, lifestyle events, entertainment experiences, and community gatherings designed to bring the automotive scene to life.</p>
+    <p>In <span class="gold-text">2025</span>, we began laying the foundation for what ELITE CLUB would become. Through consistency, creativity, and the support of our growing community, we continued to develop our presence and establish ourselves as a platform that represents more than just cars. We wanted to create something that combines automotive culture, entertainment, lifestyle, networking, and unforgettable experiences under one community.</p>
 
-    <p>Our journey eventually led us to our first major <span class="gold-text">ELITE Festival</span>, marking an important milestone in the history of the club.</p>
+    <p>Our journey eventually led us to our first major <span class="gold-text">ELITE Festival</span>, marking an important milestone in the history of the club. The festival represents our ambition to take the ELITE experience beyond traditional car meets and create a complete lifestyle event where automotive culture meets music, entertainment, fashion, social experiences, and live activities. It is a celebration of the people, the cars, the culture, and the community that have supported us throughout our journey.</p>
+
+    <p>At ELITE CLUB, we are constantly looking for new ways to push boundaries and improve the experiences we create. We work to provide opportunities for car owners to showcase their vehicles, automotive brands to connect with their target audience, businesses to reach new communities, and enthusiasts to experience something different. We also believe strongly in collaboration and partnerships, working with brands, businesses, creators, artists, and other communities to create bigger and better experiences.</p>
+
+    <p>As we continue to grow, our vision is to build ELITE CLUB into one of the most recognized automotive and lifestyle communities in Nigeria and beyond. We want ELITE to become a name associated with quality, creativity, exclusivity, entertainment, and community. From intimate car meets to large-scale festivals and automotive events, we are committed to creating experiences that people look forward to and remember long after the event is over.</p>
+
+    <p>Our story is still being written. Every car that joins our meets, every person who becomes part of our community, every event we host, and every partnership we create contributes to the ELITE journey. We are grateful to everyone who has supported the club from the beginning and to everyone who continues to believe in what we are building.</p>
 
     <h3 class="about-final"><span>ELITE CLUB</span> is more than a car club. It is a community, a lifestyle, and a movement.</h3>
-    <p style="font-size: 18px; margin-top: 20px;">Welcome to ELITE.</p>
+    <p style="font-size: 18px; margin-top: 20px; text-align: center;">Welcome to ELITE.</p>
   </div>
 
+  <!-- FOOTER WITH SOCIAL ICONS -->
   <footer>
-    <h2 class="gold-text">ELITE CLUB</h2>
-    <p>© 2023-2026 ELITE CLUB</p>
+    <h2 class="gold-text" style="margin-bottom: 25px; font-size: 24px;">ELITE CLUB</h2>
+
+    <div class="social-icons">
+      <!-- INSTAGRAM -->
+      <a href="https://www.instagram.com/eliteticket87?igsi=Mzk3YXpwanBpbTV2&utm_source=qr" target="_blank" class="social-icon" aria-label="Instagram">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2zm-.2 2A3.6 3.6 0 0 0 4 7.6v8.8C4 18.39 5.61 20 7.6 20h8.8a3.6 3.6 0 0 0 3.6-3.6V7.6C20 5.61 18.39 4 16.4 4H7.6zm9.65 1.5a1.25 1.25 0 0 1 1.25 1.25A1.25 1.25 0 0 1 17.25 8A1.25 1.25 0 0 1 16 6.75a1.25 1.25 0 0 1 1.25-1.25zM12 7a5 5 0 0 1 5 5a5 5 0 0 1-5 5a5 5 0 0 1-5-5a5 5 0 0 1 5-5zm0 2a3 3 0 0 0-3 3a3 3 0 0 0 3 3a3 3 0 0 0 3-3a3 3 0 0 0-3-3z"/></svg>
+      </a>
+
+      <!-- TIKTOK -->
+      <a href="https://www.tiktok.com/@elitetickets8?_r=1&_d=f449mmlmkb1bd2&sec_uid=MS4wLjABAAAAuXLqDBvKLrURR30-3C29k2VB9-LIs2-XyWp5aaVbsbLjqKtApwj_OCZDfR-wPRFO&share_author_id=7071209298394792966&sharer_language=en&source=h5_m&u_code=e0f9jd1k0k87e0&item_author_type=1&utm_source=whatsapp&share_enter_from=&tt_from=whatsapp&enable_checksum=1&utm_medium=ios&share_link_id=4061B25F-D3A5-4993-A2D0-C0AABE2C9536&user_id=7071209298394792966&sec_user_id=MS4wLjABAAAAuXLqDBvKLrURR30-3C29k2VB9-LIs2-XyWp5aaVbsbLjqKtApwj_OCZDfR-wPRFO&utm_campaign=client_share&panel_source_v2=qrcode_panel&ug_btm=b8727,b0&social_share_type=5&share_app_id=1233" target="_blank" class="social-icon" aria-label="TikTok">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg>
+      </a>
+
+      <!-- WHATSAPP - IMPROVED ICON -->
+      <a href="https://wa.me/2348032933407" target="_blank" class="social-icon whatsapp" aria-label="WhatsApp">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+          <path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 221.8-99.6 221.8-222 0-59.5-23.2-115.2-65.3-157zm-74.5 187.6c-3.3-1.7-19.6-9.7-22.7-10.8-3.1-1.1-5.3-1.7-7.5 1.7s-8.7 10.8-10.6 13c-1.9 2.2-3.9 2.5-7.2.8-3.3-1.7-13.9-5.1-26.5-16.3-9.8-8.7-16.4-19.5-18.3-22.8-1.9-3.3.2-5.1 1.4-6.7 1.5-1.5 3.3-3.9 4.9-5.9 1.7-1.9 2.2-3.3 3.3-5.5 1.1-2.2.5-4.1-.3-5.8-1.1-1.7-7.5-18-10.3-24.6-2.7-6.5-5.4-5.6-7.5-5.7-1.9-.1-4.1-.1-6.3-.1-2.2 0-5.8.8-8.8 4-3 3.2-11.5 11.2-11.5 27.3s11.8 31.7 13.5 33.9c1.7 2.2 23.3 35.6 56.5 49.9 8 3.4 14.2 5.5 19.1 7 8 2.5 15.3 2.2 21.1 1.3 6.3-.9 19.6-8 22.4-15.7 2.8-7.8 2.8-14.4 2-15.8-.8-1.3-3-2-6.3-3.5z"/>
+        </svg>
+      </a>
+    </div>
+
+    <p>© 2026 THE ELITE CLUB. All Rights Reserved.</p>
   </footer>
 
-  <!-- FADE IN + FIREBASE SCRIPT -->
   <script type="module">
     import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
     import { getAuth, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
-
-    const firebaseConfig = {
-      apiKey: "AIzaSyA9_06i2rVVM9Rms6B0lc15OzRXBe8xsoM",
-      authDomain: "elite-club-98bc4.firebaseapp.com",
-      projectId: "elite-club-98bc4",
-      storageBucket: "elite-club-98bc4.firebasestorage.app",
-      messagingSenderId: "625107067225",
-      appId: "1:625107067225:web:c7d0229631660c29502c48"
-    };
-    const app = initializeApp(firebaseConfig);
-    const auth = getAuth(app);
-    const userNav = document.getElementById('userNav');
-
+    const firebaseConfig = { apiKey: "AIzaSyA9_06i2rVVM9Rms6B0lc15OzRXBe8xsoM", authDomain: "elite-club-98bc4.firebaseapp.com", projectId: "elite-club-98bc4", storageBucket: "elite-club-98bc4.firebasestorage.app", messagingSenderId: "625107067225", appId: "1:625107067225:web:c7d0229631660c29502c48" };
+    const app = initializeApp(firebaseConfig); const auth = getAuth(app); const userNav = document.getElementById('userNav');
     onAuthStateChanged(auth, (user) => {
       if (user) {
         const name = user.displayName || user.email.split('@')[0];
@@ -230,19 +259,8 @@
       }
     });
     window.logout = () => { signOut(auth); }
-
-    // FADE IN ON SCROLL
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('show');
-        }
-      });
-    }, { threshold: 0.1 });
-
-    document.querySelectorAll('.fade-in').forEach(section => {
-      observer.observe(section);
-    });
+    const observer = new IntersectionObserver((entries) => { entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('show'); } }); }, { threshold: 0.1 });
+    document.querySelectorAll('.fade-in').forEach(section => { observer.observe(section); });
   </script>
 </body>
 </html>

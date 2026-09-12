@@ -2,43 +2,128 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
   <title>BUY TICKETS - ELITE CLUB</title>
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { background: #000; color: white; font-family: 'Helvetica Neue', Arial, sans-serif; }
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Inter:wght@400;500;700&display=swap');
+    * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+    html { scroll-behavior: smooth; }
+    body { background: #000; color: white; font-family: 'Inter', sans-serif; overflow-x: hidden; }
+
+.gold-text { background: linear-gradient(90deg, #FFD700, #FFA500, #FFD700); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
     
-    /* NAVBAR */
-.nav { display: flex; justify-content: space-between; align-items: center; padding: 35px 70px; border-bottom: 1px solid #111; }
-.nav-left { font-size: 12px; letter-spacing: 3px; font-weight: 500; color: #ccc; text-transform: uppercase; }
-.nav-left.gold { color: gold; font-weight: 700; border-bottom: 1px solid gold; padding-bottom: 4px; }
-.nav-right a { color: gold; text-decoration: none; font-weight: 700; letter-spacing: 2px; }
-.nav-right a:hover { color: white; }
+/* NAVBAR */
+.nav { display: flex; justify-content: space-between; align-items: center; padding: 18px 20px; position: fixed; width: 100%; z-index: 100; background: rgba(0,0,0,0.9); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(255,215,0,0.1); }
+.nav-left { font-size: 10px; letter-spacing: 2px; font-weight: 700; color: #ccc; }
+.nav-right a { color: gold; text-decoration: none; font-weight: 900; letter-spacing: 1.5px; font-size: 12px; transition: 0.3s; }
 
-    /* TICKETS SECTION */
-.container { padding: 80px 70px; max-width: 1200px; margin: 0 auto; }
-.header.small { color: gold; font-size: 12px; letter-spacing: 3px; margin-bottom: 15px; font-weight: 700; }
-.header h1 { font-size: 60px; font-weight: 900; margin-bottom: 10px; }
-.header p { color: #888; margin-bottom: 60px; }
-.ticket-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
-.ticket-card { border: 1px solid #222; padding: 40px 30px; background: #0a0a0a; transition: 0.3s; position: relative; }
-.ticket-card:hover { border-color: gold; transform: translateY(-5px); }
-.ticket-card.popular { border: 2px solid gold; }
-.ticket-card.badge { position: absolute; top: -15px; right: 20px; background: gold; color: black; padding: 5px 15px; font-size: 11px; font-weight: 900; letter-spacing: 1px; }
-.ticket-card h3 { font-size: 24px; margin-bottom: 10px; }
-.ticket-card.price { font-size: 36px; color: gold; font-weight: 900; margin: 20px 0; }
-.ticket-card.price.small { font-size: 14px; color: #888; }
-.ticket-card.features { list-style: none; margin: 30px 0; }
-.ticket-card.features li { color: #bbb; margin-bottom: 12px; font-size: 14px; }
-.ticket-card.features li:before { content: "✓ "; color: gold; font-weight: bold; margin-right: 8px; }
-.btn-buy { width: 100%; background: gold; color: black; padding: 16px; text-align: center; text-decoration: none; font-weight: 900; letter-spacing: 1.5px; display: block; border: none; cursor: pointer; transition: 0.3s; }
-.btn-buy:hover { background: white; }
+    /* HERO HEADER */
+.hero-tickets { padding: 120px 20px 50px; text-align: center; background: radial-gradient(circle at 50% 20%, rgba(255,215,0,0.08) 0%, transparent 60%); }
+.hero-tickets .label { color: gold; font-size: 10px; letter-spacing: 3px; font-weight: 900; margin-bottom: 15px; text-transform: uppercase; }
+.hero-tickets h1 { font-family: 'Montserrat', sans-serif; font-size: 38px; font-weight: 900; letter-spacing: -1px; margin-bottom: 12px; line-height: 1.1; }
+.hero-tickets p { color: #aaa; font-size: 15px; }
+.hero-tickets .date { color: gold; font-weight: 700; margin-top: 8px; font-size: 14px; }
 
-    @media(max-width: 900px){
-  .nav,.container { padding: 30px; }
-  .ticket-grid { grid-template-columns: 1fr; }
-  .header h1 { font-size: 40px; }
+    /* TICKETS GRID */
+.container { padding: 0 20px 100px; max-width: 1400px; margin: 0 auto; }
+.ticket-grid { display: grid; grid-template-columns: 1fr; gap: 25px; }
+
+.ticket-card { 
+      background: rgba(255,255,255,0.03); 
+      border: 1px solid rgba(255,215,0,0.15); 
+      backdrop-filter: blur(20px); 
+      border-radius: 24px; 
+      padding: 35px 25px; 
+      transition: 0.4s; 
+      position: relative; 
+      display: flex;
+      flex-direction: column;
     }
+.ticket-card:active { 
+      transform: scale(0.98); 
+    }
+
+.ticket-badge { 
+      position: absolute; 
+      top: 18px; 
+      right: 18px; 
+      background: linear-gradient(90deg, #FFD700, #FFA500); 
+      color: black; 
+      padding: 6px 12px; 
+      font-size: 9px; 
+      font-weight: 900; 
+      letter-spacing: 1.5px; 
+      border-radius: 50px; 
+      font-family: 'Montserrat', sans-serif; 
+    }
+
+.ticket-header h3 { font-family: 'Montserrat', sans-serif; font-size: 26px; font-weight: 900; margin-bottom: 6px; }
+.ticket-header .subtitle { color: #888; font-size: 12px; letter-spacing: 1px; text-transform: uppercase; }
+
+.ticket-price { 
+      font-size: 38px; 
+      color: gold; 
+      font-weight: 900; 
+      margin: 20px 0; 
+      font-family: 'Montserrat', sans-serif; 
+      line-height: 1;
+    }
+.ticket-price span { font-size: 13px; color: #888; font-weight: 500; }
+
+.ticket-features { list-style: none; margin: 25px 0 30px; flex-grow: 1; }
+.ticket-features li { 
+      color: #ccc; 
+      margin-bottom: 12px; 
+      font-size: 14px; 
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      line-height: 1.5;
+    }
+.ticket-features li svg { width: 16px; height: 16px; fill: gold; flex-shrink: 0; margin-top: 2px; }
+
+.btn-buy { 
+      width: 100%; 
+      background: linear-gradient(90deg, #FFD700, #FFA500); 
+      color: black; 
+      padding: 18px; 
+      text-align: center; 
+      text-decoration: none; 
+      font-weight: 900; 
+      letter-spacing: 2px; 
+      display: block; 
+      border: none; 
+      border-radius: 50px; 
+      cursor: pointer; 
+      transition: 0.3s; 
+      font-family: 'Montserrat', sans-serif;
+      font-size: 15px;
+      min-height: 52px; /* tap target for mobile */
+    }
+.btn-buy:active { transform: scale(0.97); }
+
+/* POPULAR CARD HIGHLIGHT */
+.ticket-card.popular {
+  border: 2px solid gold;
+  background: linear-gradient(180deg, rgba(255,215,0,0.05) 0%, rgba(255,255,255,0.03) 100%);
+}
+
+/* TABLET + DESKTOP */
+@media(min-width: 768px){
+.nav { padding: 25px 70px; }
+.nav-left { font-size: 12px; letter-spacing: 4px; }
+.nav-right a { font-size: 14px; letter-spacing: 2px; }
+.hero-tickets { padding: 160px 70px 80px; }
+.hero-tickets h1 { font-size: 70px; letter-spacing: -3px; }
+.hero-tickets p { font-size: 18px; }
+.container { padding: 0 70px 120px; }
+.ticket-grid { grid-template-columns: repeat(2, 1fr); gap: 35px; }
+.ticket-card { padding: 50px 40px; }
+.ticket-card:hover { transform: translateY(-12px); box-shadow: 0 30px 80px rgba(255,215,0,0.25); }
+.ticket-header h3 { font-size: 32px; }
+.ticket-price { font-size: 50px; }
+.btn-buy:hover { transform: scale(1.03); box-shadow: 0 0 40px rgba(255,215,0,0.6); }
+}
   </style>
 </head>
 <body>
@@ -46,63 +131,93 @@
   <!-- NAVBAR -->
   <div class="nav">
     <div class="nav-left">
-      <span class="gold">ELITE CLUB</span> / TICKETS
+      <span class="gold-text">ELITE CLUB</span> / TICKETS
     </div>
     <div class="nav-right">
-      <a href="index.html">← BACK HOME</a>
+      <a href="index.html">← BACK</a>
     </div>
+  </div>
+
+  <!-- HERO -->
+  <div class="hero-tickets">
+    <div class="label">05 / ACCESS</div>
+    <h1>CHOOSE <span class="gold-text">YOUR LANE</span></h1>
+    <p>Victoria Island, Lagos</p>
+    <p class="date">NOV 20, 2026 · 2PM - LATE</p>
   </div>
 
   <!-- TICKETS -->
   <div class="container">
-    <div class="header">
-      <div class="small">05 / ACCESS</div>
-      <h1>CHOOSE <span style="color: gold;">YOUR LANE.</span></h1>
-      <p>November 14 | Victoria Island, Lagos | 2PM - Late</p>
-    </div>
-
     <div class="ticket-grid">
       
       <!-- REGULAR -->
       <div class="ticket-card">
-        <h3>REGULAR</h3>
-        <div class="price">₦12,000 <span class="small">/ Online</span></div>
-        <ul class="features">
-          <li>General Event Access</li>
-          <li>Access to Car Displays</li>
-          <li>Food & Drinks Available</li>
-          <li>Elite Club Wristband</li>
+        <div class="ticket-header">
+          <h3>REGULAR</h3>
+          <div class="subtitle">General Access</div>
+        </div>
+        <div class="ticket-price">₦10,000 <span>/ Online</span></div>
+        <ul class="ticket-features">
+          <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>Full access to the event</li>
+          <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>DJ performance + Fireworks</li>
+          <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>Car awards + Games</li>
+          <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>Access to vendor stalls</li>
+          <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>Main dance/party area</li>
         </ul>
         <a href="#" class="btn-buy">BUY NOW</a>
       </div>
 
       <!-- VIP -->
       <div class="ticket-card popular">
-        <div class="badge">MOST POPULAR</div>
-        <h3>VIP</h3>
-        <div class="price">₦35,000 <span class="small">/ Online</span></div>
-        <ul class="features">
-          <li>Everything in Regular</li>
-          <li>VIP Lounge Access</li>
-          <li>Complimentary Drinks</li>
-          <li>Priority Entry</li>
-          <li>Meet & Greet Section</li>
+        <div class="ticket-badge">MOST POPULAR</div>
+        <div class="ticket-header">
+          <h3>VIP</h3>
+          <div class="subtitle">Premium Experience</div>
+        </div>
+        <div class="ticket-price">₦30,000 <span>/ Online</span></div>
+        <ul class="ticket-features">
+         <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>Everything in Regular</li>
+         <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>VIP photo area</li>
+         <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>Reserved VIP seating</li>
+         <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>VIP zone access</li>
+         <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>Complimentary drinks</li>
         </ul>
         <a href="#" class="btn-buy">BUY NOW</a>
       </div>
 
       <!-- VVIP TABLE -->
       <div class="ticket-card">
-        <h3>VVIP TABLE FOR 4</h3>
-        <div class="price">₦200,000 <span class="small">/ Table</span></div>
-        <ul class="features">
-          <li>Everything in VIP</li>
-          <li>Reserved Table for 4</li>
-          <li>Premium Bottle Service</li>
-          <li>Personal Host</li>
-          <li>Parking Access</li>
+        <div class="ticket-header">
+          <h3>VVIP TABLE</h3>
+          <div class="subtitle">For 2 Guests</div>
+        </div>
+        <div class="ticket-price">₦45,000 <span>/ Table</span></div>
+        <ul class="ticket-features">
+          <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>Everything in VIP</li>
+          <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>Private bar access</li>
+          <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>Dedicated waiters</li>
+          <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>Shaded covered seating</li>
+          <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>Backstage + Fast lane entry</li>
         </ul>
-        <a href="#" class="btn-buy">RESERVE TABLE</a>
+        <a href="#" class="btn-buy">BUY NOW</a>
+      </div>
+
+      <!-- TABLE FOR 4 -->
+      <div class="ticket-card popular">
+        <div class="ticket-badge">BEST VALUE</div>
+        <div class="ticket-header">
+          <h3>TABLE FOR 4</h3>
+          <div class="subtitle">VVIP Experience</div>
+        </div>
+        <div class="ticket-price">₦250,000 <span>/ Table</span></div>
+        <ul class="ticket-features">
+          <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>4 VVIP passes included</li>
+          <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>Reserved premium seating</li>
+          <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>Food + Hospitality package</li>
+          <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>Dedicated table service</li>
+          <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>Elite gift box + Welcome pack</li>
+        </ul>
+        <a href="#" class="btn-buy">BUY NOW</a>
       </div>
 
     </div>
